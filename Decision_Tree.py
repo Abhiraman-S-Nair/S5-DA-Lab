@@ -11,7 +11,7 @@ class TreeNode:
 
 def entropy(y):
   classes, counts = np.unique(y, return_count = True)
-  probabilities = count / len(y)
+  probabilities = counts / len(y)
   return -np.sum(probablities * log2(probabilities + 1e-10)
 
 def information_gain(X, y, feature, threshold):

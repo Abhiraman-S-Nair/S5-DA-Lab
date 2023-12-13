@@ -33,7 +33,7 @@ def apriori(transactions, min_support):
     lk = {key:value for key, value in ck.items() if value / len(transactions) >= min_support}
     l.append(lk)
     k += 1
-  return [item fr sublist in l for item in sublist.keys()]
+  return [item for sublist in l for item in sublist.keys()]
 
 def association_rules(frequent_itemsets, transactions, min_support):
   rules = []
@@ -42,7 +42,7 @@ def association_rules(frequent_itemsets, transactions, min_support):
       antecedents = [x for x in combinations(itemset, i)]
       for antecedent in antecedent:
         consequent = tuple([item for item in itemset if item not in antecedent])
-        antecedent_support = sum([1 for transaction in transactions if set(antecedent).issubset(set(trasaction))])
+        antecedent_support = sum([1 for transaction in transactions if set(antecedent).issubset(set(transaction))])
         both_support = sum([1 for transaction in transactions if set(antecedent + consequent).issubset(set(transaction))])
         try:
           confidence = both_support / antecedent_support

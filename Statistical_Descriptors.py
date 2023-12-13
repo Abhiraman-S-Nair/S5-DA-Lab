@@ -35,7 +35,7 @@ right = dat[len(dat)//2+1 : ]
 q1 = left[len(left)//2]
 q3 = right[len(right)//2]
 iqr = q3 - q1
-quartile_dat = "The quartiles are : Q1 = " + str(q1) + " Q2 = " + str(medain) + " Q3 = " + str(q3) + " and the IQR is : " + str(iqr) 
+quartile_dat = "The quartiles are : Q1 = " + str(q1) + " Q2 = " + str(median) + " Q3 = " + str(q3) + " and the IQR is : " + str(iqr) 
 outliers = []
 for i in dat:
   if i < q1 - 1.5 * iqr or i > q3 + 1.5 * iqr:

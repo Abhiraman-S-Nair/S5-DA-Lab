@@ -35,7 +35,7 @@ def apriori(transactions, min_support):
     k += 1
   return [item for sublist in l for item in sublist.keys()]
 
-def association_rules(frequent_itemsets, transactions, min_support):
+def association_rules(frequent_itemsets, transactions, min_confidence):
   rules = []
   for itemset in frequent_itemset:
     for i in range(1, len(itemset)):

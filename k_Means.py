@@ -9,8 +9,8 @@ def k_means_clustering(data, k, max_iterations = 100):
     labels = [min(range, key = lambda i : euclidean_distance(point, centroids[i]) for point in data)]
     new_centroids = [[sum(data[j][dim] for j in range(len(data)) if labels[j] == i) / labels.count(i) for dim in range(len(data[0]))]for i in range(k)]
 
-  if new_centroids == centroids:
-    break
+    if new_centroids == centroids:
+      break
   centroids = new_centroids
   return labels, centroids
 
